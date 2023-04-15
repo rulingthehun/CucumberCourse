@@ -76,6 +76,9 @@ public class DialogContent extends Parent {
             case "saveButton":
                 myElement = saveButton;
                 break;
+            //case "acceptCookies":
+            //    myElement = acceptCookies;
+            //    break;
         }
 
         clickFunction(myElement);

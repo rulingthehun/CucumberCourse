@@ -31,5 +31,6 @@ public class _01_LoginSteps {
     @Then("User should login successful")
     public void userShouldLoginSuccessful() {
         dc.findAndContainsText("txtTechnoStudy","Techno Study");
+        //dc.findAndClick("acceptCookies");
     }
 }

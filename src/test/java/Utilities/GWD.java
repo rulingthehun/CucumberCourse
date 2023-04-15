@@ -23,18 +23,18 @@ public class GWD {
             Logger.getLogger("").setLevel(Level.SEVERE);
             System.setProperty(org.slf4j.simple.SimpleLogger.DEFAULT_LOG_LEVEL_KEY, "Error");
 
-            System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
-            WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
+            //System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
+            //WebDriverManager.chromedriver().setup();
+            //driver = new ChromeDriver();
 
             //System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE,"/dev/null");
             //WebDriverManager.firefoxdriver().setup();
             //driver = new FirefoxDriver();
 
-            //System.setProperty(EdgeDriverService.EDGE_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
-            //System.setProperty("webdriver.edge.verboseLogging", "true");
-            //WebDriverManager.edgedriver().setup();
-            //driver = new EdgeDriver();
+            System.setProperty(EdgeDriverService.EDGE_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
+            System.setProperty("webdriver.edge.verboseLogging", "true");
+            WebDriverManager.edgedriver().setup();
+            driver = new EdgeDriver();
 
             //WebDriverManager.safaridriver().setup();
             //driver = new SafariDriver();
