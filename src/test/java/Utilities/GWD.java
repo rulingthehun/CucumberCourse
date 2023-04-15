@@ -46,7 +46,7 @@ public class GWD {
 
     public static void quitDriver() {
         try {
-            Thread.sleep(1000);
+            Thread.sleep(1500);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
