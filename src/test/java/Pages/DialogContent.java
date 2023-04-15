@@ -27,16 +27,22 @@ public class DialogContent extends Parent {
     private WebElement addButton;
 
     @FindBy(xpath = "//ms-text-field[@formcontrolname='name']//input")
-    private WebElement countryName;
+    private WebElement nameInput;
 
     @FindBy(xpath = "//ms-text-field[@formcontrolname='code']//input")
-    private WebElement countryCode;
+    private WebElement codeInput;
+
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='shortName']//input")
+    private WebElement shortNameInput;
 
     @FindBy(xpath = "//ms-save-button//button")
     private WebElement saveButton;
 
     @FindBy(xpath = "//div[contains(text(),'successfully')]")
     private WebElement successMessage;
+
+    @FindBy(xpath = "//div[contains(text(),'already exists')]")
+    private WebElement unsuccessMessage;
 
     //@FindBy(css = "button[class='consent-give']")
     //private WebElement acceptCookies;
@@ -53,11 +59,14 @@ public class DialogContent extends Parent {
             case "password":
                 myElement = password;
                 break;
-            case "countryName":
-                myElement = countryName;
+            case "nameInput":
+                myElement = nameInput;
                 break;
-            case "countryCode":
-                myElement = countryCode;
+            case "codeInput":
+                myElement = codeInput;
+                break;
+            case "shortNameInput":
+                myElement = shortNameInput;
                 break;
         }
 
@@ -92,6 +101,9 @@ public class DialogContent extends Parent {
                 break;
             case "successMessage":
                 myElement = successMessage;
+                break;
+            case "unsuccessMessage":
+                myElement = unsuccessMessage;
                 break;
         }
 
