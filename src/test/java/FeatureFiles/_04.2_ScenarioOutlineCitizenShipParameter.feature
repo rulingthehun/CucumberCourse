@@ -11,10 +11,16 @@ Feature: CitizenShip page
     Then User should login successful
     And Navigate to citizenships page
 
-  Scenario: Add citizenship
-    When Add a citizenship name as "rndmCitizenship61" short name as "rndmCitizenship61"
+  Scenario Outline: Add citizenship
+    When Add a citizenship name as "<Name>" short name as "<shortName>"
     Then Success message should be displayed for citizenship
 
-  Scenario: Add second citizenship
-    When Add a citizenship name as "rndmCitizenship61" short name as "rndmCitizenship61"
+  #Scenario: Add second citizenship
+    When Add a citizenship name as "<Name>" short name as "<shortName>"
     Then Unsuccess message should be displayed
+    Examples:
+      |   Name   | shortName |
+      | citName1 | citShort1 |
+      | citName2 | citShort2 |
+      | citName3 | citShort3 |
+      | citName4 | citShort4 |

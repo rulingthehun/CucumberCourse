@@ -37,7 +37,7 @@ public class _04_CitizenShipSteps {
     }
 
     @When("Add a citizenship name as {string} short name as {string}")
-    public void addACitizenshipNameAsShrotNameAs(String name, String shortName) {
+    public void addACitizenshipNameAsShortNameAs(String name, String shortName) {
         dc.findAndClick("addButton");
         dc.findAndSend("nameInput", name);
         dc.findAndSend("shortNameInput", shortName);
