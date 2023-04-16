@@ -34,6 +34,7 @@ public class _04_CitizenShipSteps {
     @Then("Unsuccess message should be displayed")
     public void unsuccessMessageShouldBeDisplayed() {
         dc.findAndContainsText("unsuccessMessage","already exists");
+        dc.findAndClick("closePanelButton");
     }
 
     @When("Add a citizenship name as {string} short name as {string}")
@@ -42,5 +43,10 @@ public class _04_CitizenShipSteps {
         dc.findAndSend("nameInput", name);
         dc.findAndSend("shortNameInput", shortName);
         dc.findAndClick("saveButton");
+    }
+
+    @When("Delete the user name as {string}")
+    public void deleteTheUserNameAs(String name) {
+        dc.findAndDelete(name);
     }
 }

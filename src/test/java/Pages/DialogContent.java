@@ -26,6 +26,27 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//ms-add-button[contains(@tooltip,'TITLE.ADD')]//button")
     private WebElement addButton;
 
+    @FindBy(xpath = "(//div//button)[47]")
+    private WebElement closePanelButton;
+
+    @FindBy(xpath = "(//ms-text-field//input)[1]")
+    private WebElement generalFieldName;
+
+    @FindBy(xpath = "//ms-text-field[@placeholder='GENERAL.FIELD.SHORTNAME']//input")
+    private WebElement generalFieldShortName;
+
+    @FindBy(xpath = "//ms-search-button//button")
+    private WebElement searchButton;
+
+    @FindBy(xpath = "(//td[@role='cell'])[2]")
+    private WebElement searchResultCell;
+
+    @FindBy(xpath = "//ms-delete-button//button")
+    private WebElement deleteButton;
+
+    @FindBy(xpath = "//div//button[@type='submit']")
+    private WebElement deleteSubmitButton;
+
     @FindBy(xpath = "//ms-text-field[@formcontrolname='name']//input")
     private WebElement nameInput;
 
@@ -51,7 +72,7 @@ public class DialogContent extends Parent {
     WebElement myElement;
 
     public void findAndSend(String strElement, String value) {
-        //element get :burda string isimden weblemente ulaşıcam
+        //element get :burda string isimden web elemente ulaşacağım
         switch (strElement) {
             case "username":
                 myElement = username;
@@ -68,13 +89,19 @@ public class DialogContent extends Parent {
             case "shortNameInput":
                 myElement = shortNameInput;
                 break;
+            case "generalFieldName":
+                myElement = generalFieldName;
+                break;
+            case "generalFieldShortName":
+                myElement = generalFieldShortName;
+                break;
         }
 
         sendKeysFunction(myElement, value);
     }
 
     public void findAndClick(String strElement) {
-        //element get :burda string isimden weblemente ulaşıcam
+        //element get :burda string isimden web elemente ulaşıcam
         switch (strElement) {
             case "loginButton":
                 myElement = loginButton;
@@ -84,6 +111,18 @@ public class DialogContent extends Parent {
                 break;
             case "saveButton":
                 myElement = saveButton;
+                break;
+            case "searchButton":
+                myElement = searchButton;
+                break;
+            case "deleteButton":
+                myElement = deleteButton;
+                break;
+            case "deleteSubmitButton":
+                myElement = deleteSubmitButton;
+                break;
+            case "closePanelButton":
+                myElement = closePanelButton;
                 break;
             //case "acceptCookies":
             //    myElement = acceptCookies;
@@ -105,8 +144,27 @@ public class DialogContent extends Parent {
             case "unsuccessMessage":
                 myElement = unsuccessMessage;
                 break;
+            case "searchResultCell":
+                myElement = searchResultCell;
+                break;
         }
 
         verifyContainsTextFunction(myElement, text);
+    }
+
+    public void findAndDelete(String searchText) {
+        findAndSend("generalFieldName", searchText);  // aranacak kelimeyi kutucuğa gönder
+        findAndClick("searchButton"); // arama butonuna bas
+
+        //wait.until(ExpectedConditions.stalenessOf(deleteButton)); stale zamanını yakalayamadım
+        //wait.until(ExpectedConditions.numberOfElementsToBeLessThan(By.xpath("//tbody[@role='rowgroup']//tr"),5));
+        findAndContainsText("searchResultCell",searchText);
+        /*
+        arama sonuçlarının ilkinde aranan
+        kelime gözükene kadar bekle
+         */
+        findAndClick("deleteButton"); // silme butonua bas, çöp kutusu
+        findAndClick("deleteSubmitButton"); // dialogda ki silme butonuna bas
+
     }
 }
