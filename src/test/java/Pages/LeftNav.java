@@ -22,6 +22,9 @@ public class LeftNav extends Parent {
     @FindBy(xpath = "(//*[text()='Citizenships'])[1]")
     private WebElement citizenships;
 
+    @FindBy(xpath = "//span[text()='Nationalities']")
+    private WebElement nationalities;
+
     WebElement myElement;
 
     public void findAndClick(String strElement) {
@@ -38,6 +41,9 @@ public class LeftNav extends Parent {
                 break;
             case "citizenships":
                 myElement = citizenships;
+                break;
+            case "nationalities":
+                myElement = nationalities;
                 break;
         }
 
