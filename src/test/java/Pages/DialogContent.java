@@ -178,11 +178,12 @@ public class DialogContent extends Parent {
 
         //wait.until(ExpectedConditions.stalenessOf(deleteButton)); stale zamanını yakalayamadım
         //wait.until(ExpectedConditions.numberOfElementsToBeLessThan(By.xpath("//tbody[@role='rowgroup']//tr"),5));
-        findAndContainsText("searchResultCell",searchText);
+        //findAndContainsText("searchResultCell",searchText);
         /*
         arama sonuçlarının ilkinde aranan
         kelime gözükene kadar bekle
          */
+        waitUntilLoading();
         findAndClick("deleteButton"); // silme butonua bas, çöp kutusu
         findAndClick("deleteSubmitButton"); // dialogda ki silme butonuna bas
 

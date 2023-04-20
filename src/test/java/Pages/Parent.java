@@ -1,6 +1,7 @@
 package Pages;
 
 import Utilities.GWD;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -45,10 +46,16 @@ public class Parent {
 
     public void verifyContainsTextFunction(WebElement element, String value)
     {
-        //waitUntilVisible(element); // gözükene kadar bekle
+        waitUntilVisible(element); // gözükene kadar bekle
         //important
         wait.until(ExpectedConditions.textToBePresentInElement(element, value));
         Assert.assertTrue(element.getText().toLowerCase().contains(value.toLowerCase()),"The text you searched could not be find");
+    }
+
+    public void waitUntilLoading()
+    {
+        wait.until(ExpectedConditions.numberOfElementsToBe(By.cssSelector("fuse-progress-bar > *"), 0));
+        // progressbar ın çocukları
     }
 // case sensitive, stringin bir parçası olabilir
 //wait.until(ExpectedCondition.textToBePresentInElement(By,"Looking4TextOnElement");
