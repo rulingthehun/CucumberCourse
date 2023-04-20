@@ -29,7 +29,8 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "(//div//button)[47]")
     private WebElement closePanelButton;
 
-    @FindBy(xpath = "(//ms-text-field//input)[1]")
+    //@FindBy(xpath = "(//ms-text-field//input)[1]")
+    @FindBy(xpath = "//mat-form-field//input[@data-placeholder='Name']")
     private WebElement generalFieldName;
 
     @FindBy(xpath = "//ms-text-field[@placeholder='GENERAL.FIELD.SHORTNAME']//input")
@@ -65,6 +66,15 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//div[contains(text(),'already exists')]")
     private WebElement unsuccessMessage;
 
+    @FindBy(xpath = "//ms-integer-field[@formcontrolname='priority']//input")
+    private WebElement priorityInput;
+
+    @FindBy(xpath = "//mat-slide-toggle[@formcontrolname='active']")
+    private WebElement toggleSlide;
+
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='budgetAccountIntegrationCode']//input")
+    private WebElement integrationCode;
+
     //@FindBy(css = "button[class='consent-give']")
     //private WebElement acceptCookies;
 
@@ -72,7 +82,7 @@ public class DialogContent extends Parent {
     WebElement myElement;
 
     public void findAndSend(String strElement, String value) {
-        //element get :burda string isimden web elemente ulaşacağım
+        //element get :burada string isimden web elemente ulaşacağım
         switch (strElement) {
             case "username":
                 myElement = username;
@@ -95,13 +105,19 @@ public class DialogContent extends Parent {
             case "generalFieldShortName":
                 myElement = generalFieldShortName;
                 break;
+            case "priorityInput":
+                myElement = priorityInput;
+                break;
+            case "integrationCode":
+                myElement = integrationCode;
+                break;
         }
 
         sendKeysFunction(myElement, value);
     }
 
     public void findAndClick(String strElement) {
-        //element get :burda string isimden web elemente ulaşıcam
+        //element get :burada string isimden web elemente ulaşacağım
         switch (strElement) {
             case "loginButton":
                 myElement = loginButton;
@@ -124,6 +140,10 @@ public class DialogContent extends Parent {
             case "closePanelButton":
                 myElement = closePanelButton;
                 break;
+            case "toggleSlide":
+                myElement = toggleSlide;
+                break;
+
             //case "acceptCookies":
             //    myElement = acceptCookies;
             //    break;
@@ -133,7 +153,7 @@ public class DialogContent extends Parent {
     }
 
     public void findAndContainsText(String strElement, String text) {
-        //element get :burda string isimden weblemente ulaşıcam
+        //element get :burada string isimden web elemente ulaşacağım
         switch (strElement) {
             case "txtTechnoStudy":
                 myElement = txtTechnoStudy;
