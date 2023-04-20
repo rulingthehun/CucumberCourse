@@ -9,7 +9,7 @@ Feature: Create and delete a exam
     When Enter username and password and click Login button
     Then User should login successful
 
-  Scenario: Create and delete a exam
+  Scenario Outline: Create and delete a exam
 
     And Click on the element in left nav
       | entranceExams      |
@@ -20,13 +20,13 @@ Feature: Create and delete a exam
       | addButton |
 
     And User sending the keys in Dialog content
-      | nameInput | brkEg123 |
+      | nameInput | <ExamName> |
 
     And Click on the element in the Form Content
-      | academicPeriod      |
-      | academicPeriodClick |
-      | gradeLevel          |
-      | gradeLevel2         |
+      | academicPeriod         |
+      | <academicPeriodOption> |
+      | gradeLevel             |
+      | <gradeLevelOption>     |
 
     And Click on the element in the Dialog
       | saveButton |
@@ -39,6 +39,12 @@ Feature: Create and delete a exam
       | entranceExamsSetup |
 
     And User delete item from Dialog
-      | brkEg123 |
+      | <ExamName> |
 
     Then Success message should be displayed
+    Examples:
+      | ExamName         | academicPeriodOption | gradeLevelOption |
+      | Math exam is11   | academicPeriodClick  | gradeLevel2      |
+      | IT exam is11     | academicPeriodClick  | gradeLevel3      |
+      | Oracle exam is11 | academicPeriodClick  | gradeLevel4      |
+      | Math exam  is11  | academicPeriodClick  | gradeLevel5      |
