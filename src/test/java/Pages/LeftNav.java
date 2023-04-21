@@ -37,6 +37,11 @@ public class LeftNav extends Parent {
     @FindBy(xpath = "(//span[text()='Fees'])[1]")
     private WebElement fees;
 
+    @FindBy(xpath = "//span[text()='Human Resources']")
+    private WebElement humanResources;
+
+    @FindBy(xpath = "(//span[text()='Employees'])[1]")
+    private WebElement employees;
     WebElement myElement;
 
     public void findAndClick(String strElement) {
@@ -68,6 +73,12 @@ public class LeftNav extends Parent {
                 break;
             case "fees":
                 myElement = fees;
+                break;
+            case "humanResources":
+                myElement = humanResources;
+                break;
+            case "employees":
+                myElement = employees;
                 break;
         }
 

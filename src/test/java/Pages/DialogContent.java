@@ -51,11 +51,47 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//ms-text-field[@formcontrolname='name']//input")
     private WebElement nameInput;
 
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='firstName']//input")
+    private WebElement firstNameInput;
+
     @FindBy(xpath = "//ms-text-field[@formcontrolname='code']//input")
     private WebElement codeInput;
 
     @FindBy(xpath = "//ms-text-field[@formcontrolname='shortName']//input")
     private WebElement shortNameInput;
+
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='lastName']//input")
+    private WebElement lastNameInput;
+
+    @FindBy(xpath = "//div//input[@data-placeholder='Employee ID']")
+    private WebElement EmployeeIDInput;
+
+    @FindBy(xpath = "(//div//mat-form-field)[8]")
+    private WebElement statusInput;
+
+    @FindBy(xpath = "//span[text()=' Passive ']")
+    private WebElement statusPassive;
+
+    @FindBy(xpath = "//span[text()=' Active ']")
+    private WebElement statusActive;
+
+    @FindBy(xpath = "(//div//mat-form-field)[13]")
+    private WebElement documentType;
+
+    @FindBy(xpath = "//span[text()=' Personal ID ']")
+    private WebElement dCPersonalID;
+
+    @FindBy(xpath = "//span[text()=' Passport ']")
+    private WebElement dCPassport;
+
+    @FindBy(xpath = "//span[text()=' Birth Certificate ']")
+    private WebElement dCBirthCertificate;
+
+    @FindBy(xpath = "(//div[@role='tab'])[2]")
+    private WebElement contactAddress;
+
+    @FindBy(xpath = "(//div//input)[8]")
+    private WebElement countryInput;
 
     @FindBy(xpath = "//ms-save-button//button")
     private WebElement saveButton;
@@ -93,11 +129,23 @@ public class DialogContent extends Parent {
             case "nameInput":
                 myElement = nameInput;
                 break;
+            case "firstNameInput":
+                myElement = firstNameInput;
+                break;
             case "codeInput":
                 myElement = codeInput;
                 break;
             case "shortNameInput":
                 myElement = shortNameInput;
+                break;
+            case "lastNameInput":
+                myElement = lastNameInput;
+                break;
+            case "EmployeeIDInput":
+                myElement = EmployeeIDInput;
+                break;
+            case "countryInput":
+                myElement = countryInput;
                 break;
             case "generalFieldName":
                 myElement = generalFieldName;
@@ -124,6 +172,30 @@ public class DialogContent extends Parent {
                 break;
             case "addButton":
                 myElement = addButton;
+                break;
+            case "statusInput":
+                myElement = statusInput;
+                break;
+            case "statusPassive":
+                myElement = statusPassive;
+                break;
+            case "statusActive":
+                myElement = statusActive;
+                break;
+            case "documentType":
+                myElement = documentType;
+                break;
+            case "dCPersonalID":
+                myElement = dCPersonalID;
+                break;
+            case "dCPassport":
+                myElement = dCPassport;
+                break;
+            case "dCBirthCertificate":
+                myElement = dCBirthCertificate;
+                break;
+            case "contactAddress":
+                myElement = contactAddress;
                 break;
             case "saveButton":
                 myElement = saveButton;

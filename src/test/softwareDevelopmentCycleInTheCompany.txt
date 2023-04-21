@@ -1,0 +1,119 @@
+Development takımı kimlerden oluşur
+
+GMY (PO)             -> deputy manager
+
+Takım
+developerlar  4-5 kişi  dev lead
+testerlar     4-5 kişi  test lead
+takım Yöneticisi ->  Scrum Master
+
+yazılım mimarı -> development architect
+yapılacak işi anlayıp-anlatan -> Business Analist
+
+
+müşteri  -> Business User
+
+
+-> İlk işe girişte önce Eğitim verirler
+   Boarding(yetki ve resmi işler) -
+   Oryantasyon -> Şirket genel kültürü-
+   Teknik Eğitim (bilgi aktarımı-takım arkadaşı)
+   KT stands for knowledge transfer
+   2-3 ay sürer
+   senden işi 2-3 ay
+   Intertech ->
+   HCL Teknoloji ->
+
+   Donanım Ortamları nasıl
+   senin bir bilgisayarın var.
+
+   ORTAMLAR deniyor.(Canlı ortamın birebir kopyası)
+
+   Dev  Environment Dev1-Dev2-Dev3
+
+   Test Environment
+    Test1(canlıdaki sürüm)-
+    Test2(şu andaki sprint ait testler)-
+    Test3(ilerki sprintlerin testleri)-
+    Test4.. Test12
+
+   UAT Env -> test ten sonra BU için ön kabul noktası
+
+   PROD Env (Canlı)
+
+   - hazırız. 7:30-8 çıktım
+   - Sabahtan geldim, çay-kahve-tost 8:45
+   - 9- Email kontrolü -
+   - 9:15 Daily meet -> dün ne yaptım-bugün ne yapacağım
+                        beni engelleyen (Blocker) var mı
+     15 dk dır , yarım saat sürer
+
+   - Döngü Sprintle Başlıyor
+
+     BA -> yapılacakları alıp, anlayıp, açıklayıp, senaryo
+     haline getirip, JIRA DA task açıp sürekli işleri atar
+     Bu attığı yere  BackLog
+
+     sprint planning - İş planlama
+     Scrum Master burayı açar-hangi işler var önümüzde
+     işleri alır - Developerlara Assign eder atar.
+     Atarken , developera sorar anlamadığın bir yer var mı
+     var BA den açıklamasını ister. ve atamasını yapar.
+     Aynı zamanda Tester bu Jira Taskının bir kopyasını
+     alır bunu TESTER a atar.Testera da sorar anlaşılmayan
+     bir şey var mı? 10 günlük bir iş miktarını 2 hafta için
+     assign eder.
+
+
+    -Sprint Başladı
+     developerı beklemek zorundamıyım, automation işleri için
+     sadece locator bekliyorum.
+
+     developer bitirdiği zaman. bölümü test EVN yüklüyor.
+     sen önce MANUEL testing, geçmedi ise hemen taskını açıyorsun
+     (Defect raise) Taskda olması gerekenler
+     1- Şu kullanıcı ve şifre girdim.
+     2- Şu verileri girdim , şu butona tıklattım
+     3- Şu olması gerekiyordu. Şu hata ile karşılaştım
+     4- ScreenShut ı mutlaka al. Kanıtlarım(Evidence) ektedir.
+     developer assign edildi.
+     developer düzetti Tester a assign etti. TASK Aşamasını Test
+
+     MANUEL testing, geçdi ise; Defect Taskı DONE getir.
+     Automation a ekler.
+
+     Bütün tesrlar, bu süreçleri bitirir. Bütn güznlemelerin bir arada
+     olduğu sürüm, yani yeni SÜRÜM
+          Regression TEST yapılır : yani bütün yeni eklemelrden sonra
+          sistemin geneli normal çalışıyormu. Tüm testler uygulanır.
+
+     -> Sonra UAT ye atılır.
+     Testera BU aemail atar, test içni kullanıcı adı ve şifresi bu
+     Lütfen test edip onay verirmisiniz.
+     BU UAT de test eder. kabul ederse. Bir form vasıtası ile imzalar
+     email gönderir.
+
+     -Geri dönmemesi lazım, kime döner ? Tester a döner. Bu çok kötü
+
+     - UAT OK.
+       Release günü belirli gün. Akşam saat 6 Release zamanı set ediliyor.
+       Orada Test Lead, Dev Lead, BA, BU, SM bulunuyor.
+
+       UAT - PROD(LIVE) a tılıyor.
+       BU ve BA manuel testing yapar.
+       Geçer ise -> sprint bitmiş demekdir.
+       GEÇMEDİ ise(Fail) -> bir önceki sürüme geri döner.
+
+
+       - Sprint bitmeden 1 günce
+         sprint review  toplantısı yapılır. herkes yaptığını
+         herkese anlatıyor.BA tamam diyor.
+
+       - Sprint bittikten 3-4 gün sonra
+         sprint retrospective toplantısı yapılıyor
+         Geçen Sprintte
+         neleri yapmaya devam eedersek daya iyi olur?
+         neleri yeni yapmaya başlarsak daha iyi olur?
+         neleri durursak daha iyi olur ?
+         Sürekli iyileştirme.Alınan karalar bir sonraki
+         sprintte uygulanır.
