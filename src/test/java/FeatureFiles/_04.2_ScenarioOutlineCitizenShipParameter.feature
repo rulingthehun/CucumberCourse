@@ -10,7 +10,7 @@ Feature: Citizenship with scenario Outline
     When Enter username and password and click Login button
     Then User should login successful
     And Navigate to citizenships page
-
+@Regression
   Scenario Outline: Add citizenship
     When Add a citizenship name as "<Name>" short name as "<shortName>"
     Then Success message should be displayed for citizenship
