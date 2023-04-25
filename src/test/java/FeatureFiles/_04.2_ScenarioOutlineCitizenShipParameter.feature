@@ -27,4 +27,4 @@ Feature: Citizenship with scenario Outline
       | citName111 | citShort111 |
       | citName221 | citShort221 |
       | citName331 | citShort331 |
-      | citName44 | citShort44 |
+      | citName441 | citShort441 |
