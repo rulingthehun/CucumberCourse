@@ -24,7 +24,7 @@ Feature: Citizenship with scenario Outline
 
     Examples:
       | Name     | shortName |
-      | citName1 | citShort1 |
-      | citName2 | citShort2 |
-      | citName3 | citShort3 |
-      | citName4 | citShort4 |
+      | citName111 | citShort111 |
+      | citName221 | citShort221 |
+      | citName331 | citShort331 |
+      | citName44 | citShort44 |

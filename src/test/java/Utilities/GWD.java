@@ -9,6 +9,7 @@ import org.openqa.selenium.edge.EdgeDriverService;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
+import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -17,6 +18,9 @@ public class GWD {
     private static WebDriver driver;
 
     public static WebDriver getDriver() {
+        // extend report türkçe bilg çalışmaması sebebiyle kondu
+        Locale.setDefault(new Locale("EN"));
+        System.setProperty("user.language", "EN");
         if (driver == null) { // 1 kere başlat
             //driver'ı start et doldur, başlat ve gönder
 
