@@ -10,7 +10,8 @@ import org.testng.annotations.Parameters;
         tags = "@Regression",
         // or yerine and yazılırsa hem smoke hem de regression tag i olanları çalıştırıyor
         features = {"src/test/java/FeatureFiles"},
-        glue = {"StepDefinitions"}
+        glue = {"StepDefinitions"},
+        plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 )
 public class _09_TestRunnerParallel extends AbstractTestNGCucumberTests {
 
