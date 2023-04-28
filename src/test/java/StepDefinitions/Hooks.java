@@ -25,6 +25,7 @@ public class Hooks {
     public void after(Scenario scenario) {
         System.out.println("Scenario is finished");
         if (scenario.isFailed()) { // Senaryo bittiği zaman
+            //            Extend report için diğer durumlarda kaldıralım
             final byte[] screenshot = ((TakesScreenshot) GWD.getDriver()).getScreenshotAs(OutputType.BYTES);
             scenario.attach(screenshot, "image/png", "screenshot name");
 
