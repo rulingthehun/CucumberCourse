@@ -10,7 +10,8 @@ Feature: Citizenship with scenario Outline
     When Enter username and password and click Login button
     Then User should login successful
     And Navigate to citizenships page
-@Regression
+
+  @Regression
   Scenario Outline: Add citizenship
     When Add a citizenship name as "<Name>" short name as "<shortName>"
     Then Success message should be displayed for citizenship
@@ -23,8 +24,8 @@ Feature: Citizenship with scenario Outline
     Then Success message should be displayed
 
     Examples:
-      | Name     | shortName |
-      | citName111 | citShort111 |
-      | citName221 | citShort221 |
-      | citName331 | citShort331 |
-      | citName441 | citShort441 |
+      | Name        | shortName    |
+      | citName1111 | citShort1111 |
+      | citName221  | citShort221  |
+      | citName331  | citShort331  |
+      | citName441  | citShort441  |

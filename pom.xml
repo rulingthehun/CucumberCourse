@@ -98,12 +98,20 @@
                 <version>3.0.0-M1</version>
                 <configuration>
 
-                    <includes>
-                        <include>**/_08_TestRunnerMasterReport.java</include>
-                    </includes>
+                    <!--XML paralel çalışmada master report için kondu-->
+                    <suiteXmlFiles>
+                        <suiteXmlFile>src/test/java/XMLFiles/ParallelTesting_MasterRep.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+
+                    <!--              Paralel çalışma yok iken direkt runner classı çalıştırmak için aşağıdaki bölüm kullanılır.-->
+                    <!--                    <includes>-->
+                    <!--                        <include>**/_08_TestRunnerMasterReport.java</include>-->
+                    <!--                    </includes>-->
+
                     <testFailureIgnore>true</testFailureIgnore>
                 </configuration>
             </plugin>
+
             <plugin>
                 <groupId>net.masterthought</groupId>
                 <artifactId>maven-cucumber-reporting</artifactId>
