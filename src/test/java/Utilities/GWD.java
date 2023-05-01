@@ -37,6 +37,9 @@ public class GWD {
         Logger.getLogger("").setLevel(Level.SEVERE);
         System.setProperty(org.slf4j.simple.SimpleLogger.DEFAULT_LOG_LEVEL_KEY, "Error");
 
+        if (threadBrowserName.get() == null)
+            threadBrowserName.set("chrome");
+
         if (threadDriver.get() == null) { // 1 kere başlat
             //driver'ı start et doldur, başlat ve gönder
 
