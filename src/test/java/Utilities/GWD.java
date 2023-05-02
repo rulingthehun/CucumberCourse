@@ -86,4 +86,8 @@ public class GWD {
     public static void setThreadBrowserName(String browserName) {
         GWD.threadBrowserName.set(browserName);
     }
+
+    public static String getThreadBrowserName() {
+        return GWD.threadBrowserName.get();
+    }
 }

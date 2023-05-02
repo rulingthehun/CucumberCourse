@@ -1,5 +1,6 @@
 package StepDefinitions;
 
+import Utilities.ExcelUtility;
 import Utilities.GWD;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -24,6 +25,14 @@ public class Hooks {
     @After
     public void after(Scenario scenario) {
         System.out.println("Scenario is finished");
+
+        LocalDateTime time = LocalDateTime.now();
+        DateTimeFormatter tF = DateTimeFormatter.ofPattern("dd_MM_yy_HHmmss");
+
+        // Senaryoların sonuçlarını bir excel formatından yazdırmak istiyorum
+        ExcelUtility.writeToExcel("src/test/java/ApachePOI/resource/ScenarioStatus.xlsx",
+                scenario, GWD.getThreadBrowserName(), time.format(tF));
+
         if (scenario.isFailed()) { // Senaryo bittiği zaman
             //            Extend report için diğer durumlarda kaldıralım
             final byte[] screenshot = ((TakesScreenshot) GWD.getDriver()).getScreenshotAs(OutputType.BYTES);
