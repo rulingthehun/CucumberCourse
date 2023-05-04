@@ -69,7 +69,43 @@ public class ExcelUtility {
         }
         else // var ise
         {
+            FileInputStream inputStream = null;
+            Workbook workbook = null;
+            Sheet sheet = null;
+            try {
+                inputStream = new FileInputStream(path);
+                workbook = WorkbookFactory.create(inputStream);
+                sheet = workbook.getSheetAt(0);
+            }catch (Exception e){
+                System.out.println(e.getMessage());
+            }
+            // workbook-sheet-row-cell
+            int rowCount = sheet.getPhysicalNumberOfRows();
+            Row yeniSatir=sheet.createRow(rowCount);
+            Cell yeniHucre=yeniSatir.createCell(0);
+            yeniHucre.setCellValue(scenario.getName());
 
+            yeniHucre=yeniSatir.createCell(1);
+            yeniHucre.setCellValue(scenario.getStatus().toString());
+
+            yeniHucre=yeniSatir.createCell(2);
+            yeniHucre.setCellValue(browserName);
+
+            yeniHucre=yeniSatir.createCell(3);
+            yeniHucre.setCellValue(time);
+
+            // file save
+            try {
+                inputStream.close();
+                FileOutputStream outputStream = new FileOutputStream(path);
+                workbook.write(outputStream);
+                workbook.close();
+                outputStream.close();
+            }
+            catch (Exception e)
+            {
+                System.out.println(e.getMessage());
+            }
         }
     }
 
