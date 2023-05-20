@@ -82,6 +82,13 @@
             <version>1.9.2</version>
         </dependency>
 
+        <!-- JDBC - MySql için eklendi -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.18</version>
+        </dependency>
+
         <dependency>
             <groupId>net.masterthought</groupId>
             <artifactId>cucumber-reporting</artifactId>
