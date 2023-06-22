@@ -61,16 +61,25 @@ public class GWD {
                 default:
                     System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
                     WebDriverManager.chromedriver().setup();
+                    // diğer testlerimizi direkt çalıştırırken, XML den parametre gelmeyeceği için default olarak chrome atandı }
 
-                    // Jenkins için hafızada maximize olarak web sayfasının görüntüsünü gelmesi için konuldu.
-                    ChromeOptions options = new ChromeOptions();
-                    options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
-
-                    threadDriver.set(new ChromeDriver(options));
-                    // diğer testlerimizi direkt çalıştırırken, XML den parametre gelmeyeceği için default olarak chrome atandı
+                    if (!runningFromIntelliJ()){
+                        // Jenkins için hafızada maximize olarak web sayfasının görüntüsünü gelmesi için konuldu.
+                        ChromeOptions options = new ChromeOptions();
+                        options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
+                        threadDriver.set(new ChromeDriver(options)); // bu threade bir webdriver atanıyor
+                    }
+                    else
+                        threadDriver.set(new ChromeDriver()); // bu threade bir webdriver atanıyor
             }
         }
         return threadDriver.get();
+    }
+
+    public static boolean runningFromIntelliJ()
+    {
+        String classPath = System.getProperty("java.class.path");
+        return classPath.contains("idea_rt.jar");
     }
 
     public static void quitDriver() {
