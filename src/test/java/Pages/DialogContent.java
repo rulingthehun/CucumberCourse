@@ -98,7 +98,7 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//ms-save-button//button")
     private WebElement saveButton;
 
-    @FindBy(xpath = "//div[contains(text(),'successfully')]")
+    @FindBy(xpath = "//div[contains(text(),'successful')]")
     private WebElement successMessage;
 
     @FindBy(xpath = "//div[contains(text(),'already exists')]")
